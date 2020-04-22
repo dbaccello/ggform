@@ -12,8 +12,8 @@
     "check:lint": "eslint {src,test}**/*.js",
     "check:format": "prettier --check {src,test}/**/*.js",
     "check:all": "npm run check:lint && npm run check:format",
-    "commit": "npx git-cz",
-    "release": "standard-version"
+    "commit": "git add . && npx git-cz",
+    "release": "standard-version && git push — follow-tags origin master && npm publish"
   },
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test",
+      "pre-commit": "npm run fix:all && npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }

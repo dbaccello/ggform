@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 // <input value="eXifXqOCPYKLlwS1zIrgDA" name="ei" type="hidden">
 
-const form = (url, id) => {
+const form = (url, selector) => {
   const options = {
     method: 'GET',
     headers: {
@@ -18,7 +18,7 @@ const form = (url, id) => {
     .then((response) => response.text())
     .then((content) => {
       const $ = cheerio.load(content);
-      const query = $(`.${id}`).serializeArray();
+      const query = $(selector).serializeArray();
       return query;
     });
 };

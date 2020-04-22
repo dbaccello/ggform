@@ -1,8 +1,8 @@
 const form = require('../src/index');
 
-describe('form(url, id)', () => {
+describe('form(url, selector)', () => {
   it('shoud return a response well formed', () =>
-    form('https://www.google.com/', 'tsf').then((received) => {
+    form('https://www.google.com/', '.tsf').then((received) => {
       expect(received).toBeDefined();
       for (let i = 0; i < received.length; i += 1) {
         expect(received[i]).toHaveProperty('name');
