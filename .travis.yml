@@ -4,5 +4,5 @@ notifications:
 node_js:
   - node
 script:
+  - bash <(curl -s https://codecov.io/bash) 
   - commitlint-travis
-  
