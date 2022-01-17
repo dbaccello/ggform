@@ -13,7 +13,9 @@
     "check:format": "prettier --check {src,test}/**/*.js",
     "check:all": "npm run check:lint && npm run check:format",
     "commit": "git add . && npx git-cz",
-    "release": "standard-version && git push — follow-tags origin master && npm publish"
+    "release": "standard-version && git push — follow-tags origin master && npm publish",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -27,8 +29,9 @@
   "homepage": "https://github.com/dbaccello/ggform#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "node-fetch": "^2.6.0",
-    "querystring": "^0.2.0"
+    "node-fetch": "^2.6.1",
+    "querystring": "^0.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -55,5 +58,6 @@
       "pre-commit": "npm run fix:all && npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "snyk": true
 }
