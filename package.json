@@ -27,7 +27,7 @@
   "homepage": "https://github.com/dbaccello/ggform#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "querystring": "^0.2.0"
   },
   "devDependencies": {
